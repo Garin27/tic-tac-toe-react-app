@@ -8,10 +8,8 @@ function GameCell({ cellItem, index }) {
 
     const cellClickHandler = () => {
         updateBoard(index)
-        const result = checkForWinner(game.board)
-       // if (result) {
-           
-       // }
+        checkForWinner(game.board)
+      
 
         
     }
