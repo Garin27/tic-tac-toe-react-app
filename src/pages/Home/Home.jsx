@@ -7,7 +7,7 @@
  function Home() {
     const navigate = useNavigate()
    return (
-     <Container>
+     <Container columnBased>
         <Title>Tic Tac Toe</Title>
         <Subtitle>Play with your friends, highest score wins</Subtitle>
         <Button onClick={() => navigate("/game-on") }>Play Now</Button>
