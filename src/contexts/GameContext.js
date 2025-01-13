@@ -1,4 +1,4 @@
-/*import { createContext, useState } from 'react';
+import { createContext, useState } from 'react';
 import { genConfig } from 'react-nice-avatar';
 
 export const GameContext = createContext({});
@@ -25,13 +25,13 @@ export const GameContextProvider = (props) => {
     });
 
     const updateBoard = (index) => {
-      let updatedBoard = game.board;
-      updatedBoard[index] = game.turn;
+        let updatedBoard = game.board;
+        updatedBoard[index] = game.turn;
         setGame({
             ...game,
             board: updatedBoard,
             turn: game.turn === 'X' ? 'O' : 'X'
-        })
+        });
     };
 
     const updateScore = (winner) => {
@@ -61,37 +61,24 @@ export const GameContextProvider = (props) => {
     };
 
     const roundComplete = (result) => {
-       if (game.turn === game.player1.choice && result !== 'draw') {
-          updateScore('player1');
-         } else if (game.turn === game.player2.choice && result !== 'draw') {
+        if (game.turn === game.player1.choice && result !== 'draw') {
+            updateScore('player1');
+        } else if (game.turn === game.player2.choice && result !== 'draw') {
             updateScore('player2');
-            } else {
-                console.log('draw');
-                updateScore('draw');
-            }
-        switchTurn();
+        } else {
+            console.log('draw');
+            updateScore('draw');
+        }
     };
-    const toggleChoice = (choice) => choice === 'X' ? 'O' : 'X';
 
-    const switchTurn = () => {
-        setGame(prevGame => ({
-            ...prevGame,
-            player1: {
-                ...prevGame.player1,
-                choice: toggleChoice(prevGame.player1.choice)
-            },
-            player2: {
-                ...prevGame.player2,
-                choice: toggleChoice(prevGame.player2.choice)
-            }
-        }));
-    };
+    
 
     const resetBoard = () => {
         setGame({
             ...game,
             board: [null, null, null, null, null, null, null, null, null],
             turn: 'X',
+            roundWinner: ""
         });
     };
 
@@ -115,6 +102,7 @@ export const GameContextProvider = (props) => {
             turn: 'X',
             roundWinner: "",
         });
+    };
 
     return (
         <GameContext.Provider value={{
@@ -127,11 +115,11 @@ export const GameContextProvider = (props) => {
             {props.children}
         </GameContext.Provider>
     );
-}};*/
+};
 
 
 
-import { createContext, useState } from 'react';
+/*import { createContext, useState } from 'react';
 import { genConfig } from 'react-nice-avatar';
 
 export const GameContext = createContext({});
@@ -262,4 +250,4 @@ export const GameContextProvider = (props) => {
             {props.children}
         </GameContext.Provider>
     );
-};
+};*/
