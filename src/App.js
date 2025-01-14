@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styles/Theme';
 import { useContext } from 'react';
 import { ThemeContext } from './contexts/ThemeContext';
+import MusicPlayer from './components/MusicPlayer/MusicPlayer';
 
 
 
@@ -17,6 +18,7 @@ function App() {
     <ThemeProvider theme={mode}>
       <GlobalStyles />
       <Router />
+      <MusicPlayer />
     </ThemeProvider>
   );
 }

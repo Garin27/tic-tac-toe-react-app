@@ -1,6 +1,3 @@
-
-
-
 import { createContext } from 'react';
 import { useModal } from '../hooks/useModal';
 import { ModalTemplate } from '../components/Modal/ModalTemplate';
